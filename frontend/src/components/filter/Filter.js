@@ -11,8 +11,6 @@ import WrapperButton from "../utilities/WrapperButton";
 import ButtonClose from "../utilities/ButtonClose";
 import classes from "./Filter.module.css";
 import FormCategory from "./FormCategory";
-import FormColors from "./FormColors";
-import FormPrice from "./FormPrice";
 import useVisibility from "../../customHook/useVisibility";
 import { ReactComponent as IconFilter } from "../../assets/funnel.svg";
 
@@ -27,14 +25,6 @@ const Filter = () => {
   const { showAlert } = useContext(AlertContext);
 
   const [filter, setFilter] = useState(initialFilter);
-
-  const setFilterPrices = useCallback((prices) => {
-    setFilter((currVal) => ({ ...currVal, prices }));
-  }, []);
-
-  const setFilterColors = useCallback((colors) => {
-    setFilter((currVal) => ({ ...currVal, colors }));
-  }, []);
 
   const setFilterCategories = useCallback((categories) => {
     setFilter((currVal) => ({ ...currVal, categories }));
@@ -88,9 +78,6 @@ const Filter = () => {
             setFilter={setFilterCategories}
             filterVal={filter.categories}
           />
-          <FormColors setFilter={setFilterColors} filterVal={filter.colors} />
-          <FormPrice setFilter={setFilterPrices} />
-
           <WrapperButton className={classes.btn} onClick={applyFilter}>
             Aplicar filtro
           </WrapperButton>
