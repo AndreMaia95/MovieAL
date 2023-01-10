@@ -37,7 +37,7 @@
   margin-right: 0.5rem;
 }
 
-.cart {
+.user {
   display: flex;
   align-items: center;
   padding: 0.7rem;
@@ -50,13 +50,13 @@
   font-size: 12px;
 }
 
-.cart:hover,
+.user:hover,
 .conta:hover {
   color: var(--cor-2);
 }
 
-.cart svg {
-  transform: scale(1.3);
+.user svg {
+  transform: scale(1.5);
   width: 30px;
   margin-left: 0.5rem;
 }
@@ -108,7 +108,7 @@
     width: 100%;
     border-radius: 0;
   }
-  .cartTxt {
+  .userTxt {
     visibility: hidden;
     position: absolute;
   }
@@ -132,12 +132,12 @@
     padding: 0.5rem 1rem;
   }
   .logo,
-  .cart,
+  .user,
   .btnColorMode {
     grid-row: 1;
   }
 
-  .cart {
+  .user {
     margin-left: initial;
   }
   .btnColorMode {

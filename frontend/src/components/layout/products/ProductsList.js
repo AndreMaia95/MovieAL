@@ -3,7 +3,6 @@ import { FilterContext } from "../../../context/FilterContext";
 import HeaderProdutos from "./HeaderProdutos";
 import classes from "./ProductsList.module.css";
 import ProductItem from "./ProductItem";
-import ProductsPagination from "./ProductsPagination";
 import FilterTags from "./FilterTags";
 
 const ProductsList = () => {

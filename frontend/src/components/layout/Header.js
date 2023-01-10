@@ -1,21 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import classes from "./Header.module.css";
-import { ReactComponent as IconCart } from "../../assets/cart.svg";
 import { ReactComponent as IconSun } from "../../assets/sun.svg";
 import { ReactComponent as IconMoon } from "../../assets/moon.svg";
-import { ReactComponent as LogoSvg } from "../../assets/logo.svg";
-import { CartContext } from "../../context/CartContext";
+import { ReactComponent as IconUser } from "../../assets/user.svg";
 import { ColorModeContext } from "../../context/ColorModeContext";
 import SearchField from "./SearchField";
 
 const Header = ({ onShow }) => {
-  const { itemsCart } = useContext(CartContext);
   const { changeMode, isDarkMode } = useContext(ColorModeContext);
   const [pageScrolled, setPageScrolled] = useState(false);
-
-  const totalItemsInTheCart = itemsCart.items.reduce((prev, curr) => {
-    return prev + curr.amount;
-  }, 0);
 
   useEffect(() => {
     const scrollPage = () => {
@@ -38,17 +31,13 @@ const Header = ({ onShow }) => {
       className={`${classes.header} ${pageScrolled ? classes.scroll : ""}`}
     >
       <div className={`container ${classes.container}`}>
-        <span className={classes.logo}>
-          <LogoSvg />
-          MovieAL
-        </span>
+        <span className={classes.logo}>MovieAL</span>
 
         <SearchField />
 
-        <button className={classes.cart} onClick={onShow}>
+        <button className={classes.user} onClick={onShow}>
           <span className={classes.amount}>
-            <IconCart />
-            <span className={classes.value}>{totalItemsInTheCart}</span>
+            <IconUser />
           </span>
         </button>
 
