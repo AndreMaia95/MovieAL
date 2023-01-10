@@ -40,7 +40,7 @@ const Header = ({ onShow }) => {
       <div className={`container ${classes.container}`}>
         <span className={classes.logo}>
           <LogoSvg />
-          Cactus
+          MovieAL
         </span>
 
         <SearchField />
